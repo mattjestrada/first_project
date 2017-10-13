@@ -1,20 +1,22 @@
 
 
-.jumbotron, #input {
+  .container {
+   text-align: center;
     background-color: black;
     width: 100%;
     margin-top: 200px;
 }
 
 #input{
-    max-width: 30%;
-    float: left;
+    max-width: 30%;   
+}
+.search{
+  font-size: 18px;
+  height:30px;
 }
 
- html {
-    clear: auto;
-    overflow: auto;
-    position:fixed;
+
+ body {
     background:url(../images/moviebook.jpg);
     background-repeat: repeat;
     height: 100%;
@@ -37,13 +39,13 @@
 }
 
 
-p{
+h2{
   font-family: 'Permanent Marker', cursive;
   color:#ffffff;
 }
 
 
-/* The animation code */
+/* The animation code 
 @keyframes slide {
      0%   {background-color: red;}
     25%  {background-color: green;}
@@ -55,17 +57,13 @@ p{
 h1 {
     width: 575px;
     height: 90px;
-    padding: 10px;
     margin: auto;
     font-size: 55px;
     font-family: 'Permanent Marker', cursive;
     color: #ffffff;
     border-radius: 15px; 
     background-color: black;
-    animation-name: slide;
-    animation-duration: 4s;
-    animation-iteration-count: 7s;
-
+    
 }
 
 @-webkit-keyframes scroll{
