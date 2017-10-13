@@ -1,7 +1,7 @@
 # first_project
 GETTING STARTED:
 
-Please find my page at:.
+Please find our page at:https://dartanianbagby1.github.io/first_project/.
 
 a. This project was a simple app implemented with HTML, css,JQuery,youtube api,google books api, imdb api, tmdb api and Firebase. 
 
