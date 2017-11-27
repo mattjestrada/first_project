@@ -1,0 +1,30 @@
+Test subl from your ST installation:
+
+First, navigate to a small folder in Terminal that you want ST to open and enter the following command:
+
+/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl .
+NOTE: You may need to replace Sublime\ Text.app in the command above to Sublime\ Text\ 3.app or Sublime\ Text\ 2.app depending upon where the application is stored in your Applications directory. The . at the end of the above command opens the current working directory you are located in (again make sure you're in a directory that only contains a few files!).
+
+If you DO NOT get Sublime Text opening your current working directory then the next set of steps will NOT work. If nothing happens or you get an error from Terminal it will be because it couldn't find the Sublime Text application. This would mean that you would have to check what you've typed (spelling, etc.) OR that Sublime Text isn't installed!
+Check ".bash_profile":
+
+Now it's time to create your symbolic link in your PATH folder, BUT, before we do, let's check your profile file by using nano ~/.bash_profile. These are the following lines that pertain to having subl work on the command line for Sublime Text:
+
+export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export EDITOR='subl -w'
+The first line sets the location where you want Terminal to look for binaries on your machine, I'm going to store my symbolic link in the /usr/local/bin directory - I guess you could store it anywhere provided you've notified Terminal where to look for binaries.
+
+The second line is OPTIONAL and just sets Sublime Text as the default editor. The flag -w has been added and you can find out more about flags by going to the Sublime Text docs: ST3 subl or ST2 subl
+
+If you do make any edits to this file once you have closed it, you need to run the command:
+
+source ~/.bash_profile 
+to compile your newly applied edits. If you see any errors after sourcing your file get them fixed before moving to the final step.
+Create a symbolic link to Sublime Text:
+
+Now in your chosen path (I used /usr/local/bin) you now enter the following command:
+
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+The /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl being EXACTLY the same location as what you entered and verified as working in STEP 1 above. The /usr/local/bin/subl being the location of where you want the symbolic link to be located - needs to be one of your PATH locations from STEP 2 above.
+
+Now when you navigate to a folder or file that you want to open in Sublime Text you now just enter subl followed by the name of the file or . to open the current working directory.
